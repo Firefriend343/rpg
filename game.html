@@ -26,7 +26,7 @@
         width: 50px;
         height: 50px;
         top:400px; left:400px;
-        border: 1px solid #666; background: blue;
+        border: 1px solid #666; background: green;
       }
       .selected { 
         box-shadow: 0 0 10px 10px rgba(100, 100, 255, 0.3);
@@ -86,7 +86,34 @@
         } 
         class Hero extends Sprite {
           decideAction() {
-            //tbd
+            if (this.command == "go left") {
+              console.log("left");
+              this.dx -= 1.25;
+            } else if (this.command == "go right") {
+              console.log("right");
+              this.dx += 1.25;
+            } else if (this.command == "up") {
+              console.log("up");
+              this.dy -= 1.25;
+            } else if (this.command = "down") {
+              console.log ("down");
+              this.dy += 1.25;
+            }//end commands
+          }
+        }
+        document.addEventListener("keydown", function(e) {
+          if (e.key == "a") {
+            console.log("a");
+            hero.command = "go left";
+          } else if (e.key == "d") {
+            console.log("d");
+            hero.command = "go right";
+          } else if ((e.key == "w") && hero.dy > -1 && hero.dy < 1) {
+            console.log("w");
+            hero.command = "up";
+          } else if (e.key == "s") {
+            console.log = ("s");
+            hero.command = "down";
           }
         }
         </script>
