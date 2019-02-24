@@ -26,7 +26,7 @@
         width: 50px;
         height: 50px;
         top:400px; left:400px;
-        border: 1px solid #666; background: blue;
+        border: 1px solid #666; background: cyan;
       }
       .selected { 
         box-shadow: 0 0 10px 10px rgba(100, 100, 255, 0.3);
@@ -87,30 +87,33 @@
           decideAction() {
             if (this.command == "go left") {
               this.x = this.x - 50;
-              this.element.style.left = this.x - px;
+              this.element.style.left = this.x - "px";
             } else if (this.command == "go right") {
               this.x = this.x + 50;
-              this.element.style.left = this.x + px;
+              this.element.style.left = this.x + "px";
             } else if (this.command == "up") {
               this.y = this.y - 50;
-              this.element.style.top = this.y + px;
+              this.element.style.top = this.y + "px";
             } else if (this.command = "down") {
               this.y = this.y + 50;
-              this.element.style.top = this.y - px;
+              this.element.style.top = this.y - "px";
             }//end commands
           }
         }
+        let hero1 = new Hero (400, 400, "hero1");
         document.addEventListener("keydown", function(e) {
           if (e.key == "a") {
-            hero.command = "go left";
+            hero1.command = "go left";
           } else if (e.key == "d") {
-            hero.command = "go right";
+            hero1.command = "go right";
           } else if ((e.key == "w") && hero.dy > -1 && hero.dy < 1) {
-            hero.command = "up";
+            hero1.command = "up";
           } else if (e.key == "s") {
-            hero.command = "down";
+            hero1.command = "down";
           }
+          hero1.decideAction();
         });//end keydown
+          
         </script>
   </body>
 </html>
