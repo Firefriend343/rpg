@@ -45,13 +45,50 @@
             <p>This is a bunch of text that will not be there long.</p>
             <p>This is a bunch of text that will not be there long.</p>
             <p>This is a bunch of text that will not be there long.</p>
-            <div id="hero" class="selected"></div>
+            <div id="hero1" class="selected"></div>
           </div>
         </main>
         <div id="status">
           Status
         </div>
         <script>
+        let allSprites = [];
+        class Sprite {
+          constructor(x, y, image_id, element=null) {
+            this.x = x; 
+            this.y = y;
+            this.spawnx = x;
+            this.spawny = y;
+            this.id = image_id;
+            if (element) {
+              this.element = element;
+            } else {
+              this.element = document.getElementById(image_id);
+            }
+            this.element.sprite = this;
+            this.width = this.element.offsetWidth;
+            this.height = this.element.offsetHeight;
+            this.dx = 0;
+            this.dy = 0;
+            this.facing = -1;
+            this.ax = 0;
+            this.ay = 0;
+            this.state = "starting";
+            this.command = "wait";
+            this.gold = 0;
+            this.hp = 100;  
+            this.damage = 3;
+            this.knockback = 2;
+            this.clinging = false; 
+            //factor?
+            allSprites.push(this);
+        }
+          
+        Class Hero extends Sprite {
+          decideAction() {
+            //tbd
+          }
+        }
         </script>
   </body>
 </html>
