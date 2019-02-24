@@ -70,7 +70,6 @@
             this.height = this.element.offsetHeight;
             this.dx = 0;
             this.dy = 0;
-            this.facing = -1;
             this.ax = 0;
             this.ay = 0;
             this.state = "starting";
@@ -88,16 +87,16 @@
           decideAction() {
             if (this.command == "go left") {
               console.log("left");
-              this.dx -= 1.25;
+              this.x -= 50;
             } else if (this.command == "go right") {
               console.log("right");
-              this.dx += 1.25;
+              this.x += 50;
             } else if (this.command == "up") {
               console.log("up");
-              this.dy -= 1.25;
+              this.y -= 50;
             } else if (this.command = "down") {
               console.log ("down");
-              this.dy += 1.25;
+              this.y += 50;
             }//end commands
           }
         }
