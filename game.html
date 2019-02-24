@@ -111,6 +111,8 @@
             hero1.command = "up";
           } else if (e.key == "s") {
             hero1.command = "down";
+          } else {
+            hero1.command = "idle";
           }
           hero1.decideAction();
         });//end keydown
