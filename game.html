@@ -86,32 +86,24 @@
         class Hero extends Sprite {
           decideAction() {
             if (this.command == "go left") {
-              console.log("left");
               this.x = this.x - 50;
             } else if (this.command == "go right") {
-              console.log("right");
               this.x = this.x + 50;
             } else if (this.command == "up") {
-              console.log("up");
               this.y = this.y - 50;
             } else if (this.command = "down") {
-              console.log ("down");
               this.y = this.y + 50;
             }//end commands
           }
         }
         document.addEventListener("keydown", function(e) {
           if (e.key == "a") {
-            console.log("a");
             hero.command = "go left";
           } else if (e.key == "d") {
-            console.log("d");
             hero.command = "go right";
           } else if ((e.key == "w") && hero.dy > -1 && hero.dy < 1) {
-            console.log("w");
             hero.command = "up";
           } else if (e.key == "s") {
-            console.log = ("s");
             hero.command = "down";
           }
         });//end keydown
